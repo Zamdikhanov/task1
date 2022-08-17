@@ -136,21 +136,21 @@ html {
     opacity: 0;
 }
 
-.svg-blur:hover .nonblurred {
+.tile-special:hover .nonblurred {
     opacity: 1;
 }
 
-.svg-blur:hover .blurred {
+.tile-special:hover .blurred {
     opacity: 1;
 }
 
-.svg-blur:hover .attention-bg__text.nonblurred {
+.tile-special:hover .attention-bg__text.nonblurred {
     opacity: 0;
     fill: transparent;
 }
 
-.svg-blur .blurred,
-.svg-blur .nonblurred {
+.tile-special .blurred,
+.tile-special .nonblurred {
     transition: opacity 0.3s ease-in-out;
 }
 
