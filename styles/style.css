@@ -109,32 +109,63 @@ html {
     padding: 0;
 }
 
+.svg-blur {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.nonblurred,
+.blurred {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.nonblurred {
+    opacity: 1;
+}
+
+.blurred {
+    opacity: 0;
+}
+
+.svg-blur:hover .nonblurred {
+    opacity: 1;
+}
+
+.svg-blur:hover .blurred {
+    opacity: 1;
+}
+
+.svg-blur:hover .attention-bg__text.nonblurred {
+    opacity: 0;
+    fill: transparent;
+}
+
+.svg-blur .blurred,
+.svg-blur .nonblurred {
+    transition: opacity 0.3s ease-in-out;
+}
+
 .attention-sign {
     display: none;
 }
 
-.attention-bg {
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/ship.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.tile-special:hover .attention-bg {
-    box-shadow: inset (0px 4px 4px rgba(0, 0, 0, 0.25));
-    filter: blur(5px);
-}
-
 .attention-bg__text {
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
-    padding: 15px;
+    position: absolute;
     font-size: 14px;
     line-height: 20px;
-    color: #ffffff;
+    fill: #ffffff;
+    left: 15px;
+    bottom: 15px;
+    transition: fill 0.3s ease-in-out;
 }
 
 .tile-special:hover>.attention-sign {
